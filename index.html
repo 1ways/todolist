@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="todo">
@@ -32,16 +33,29 @@
         <div class="modal__wrapper hidden">
             <div class="modal modals__view">
                 <div class="modal-title modals__view-title"></div>
-                <div class="modal-body modals__create-body">
+                <div class="modal-body modals__view-body">
                     <div class="modal__view-desc"></div>
                     <div class="modal__options">
-                        <button class="modal-btn modal__delete-btn">Delete</button>
+                        <button class="modal-btn modal__edit-btn">Edit</button>
+                        <button class="modal-btn modal-btn__close">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal__wrapper hidden">
+            <div class="modal modals__edit">
+                <div class="modal-title modals__edit-title">Editing the task</div>
+                <div class="modal-body modals__edit-body">
+                    <input class="modal-input" id="edit-input" type="text" placeholder="Task name">
+                    <textarea class="modal-textarea" id="edit-textarea" placeholder="Task description"></textarea>
+                    <div class="modal__options">
+                        <button class="modal-btn modal-btn__save">Save</button>
                         <button class="modal-btn modal-btn__close">Close</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

@@ -1,0 +1,207 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    line-height: 18px;
+    color: #9FA6C2;
+    background-color: #E3E9FF;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.todo__header {
+    width: 350px;
+    padding: 20px 0;
+    background-color: #AF7EEB;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.todo__body {
+    background-color: #fff;
+    padding: 40px 60px;
+    position: relative;
+}
+
+.todo__body-list {
+    list-style: none;
+}
+
+.todo__body-item {
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all .2s;
+}
+
+.todo__body-item::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: #9FA6C2;
+    border-radius: 50%;
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all .2s;
+}
+
+.todo__body-item:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.todo__body-item:hover {
+    color: #000;
+}
+
+.todo__body-item:hover::before {
+    background-color: #000;
+}
+
+.todo__body-item:hover .todo-delete{
+    opacity: 1;
+    pointer-events: all;
+    visibility: visible;
+}
+
+.todo-delete {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    transition: all .2s;
+}
+
+.todo-delete:hover {
+    color: red;
+}
+
+.todo__body-btn {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+
+    border: none;
+    border-radius: 20px;
+    background-color: #AF7EEB;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px 20px;
+}
+
+/* modals */
+.modal__wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal__wrapper.hidden {
+    display: none;
+}
+
+.modal {
+    background-color: #fff;
+    padding: 20px 50px;
+    width: 500px;
+}
+
+.modal-title {
+    font-size: 20px;
+    color: #000;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    font-size: 16px;
+}
+
+.modal-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    border: 1px solid #000;
+    transition: all .2s ease-in;
+}
+
+.modal-input::placeholder {
+    font-size: 16px;
+}
+
+.modal-textarea {
+    width: 100%;
+    padding: 10px;
+    height: 100px;
+    resize: none;
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-family: inherit;
+    border: 1px solid #000;
+    transition: all .2s ease-in;
+}
+
+.modal-textarea::placeholder {
+    font-size: 16px;
+    font-family: inherit;
+
+}
+
+.modal__view-desc {
+    margin-bottom: 20px;
+}
+
+.modal__options {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal-btn {
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: #fff;
+    background-color: #AF7EEB;
+}
+
+.center {
+    text-align: center;
+}
+
+.todo-delete {
+    font-size: 18px;
+    transition: all .1s;
+}
+
+.red {
+    border: 1px solid rgb(254, 58, 58);
+}
+
+input {
+    outline: none;
+}
