@@ -21,7 +21,7 @@ todo.addEventListener('click', event => {
         showNewTaskModal();
     }
 
-    if (currentTarget.classList.contains('todo__body-item')) {
+    if (currentTarget.classList.contains('todo__body-item') || currentTarget.classList.contains('todo__body-text')) {
         showTaskModal();
         fillTaskModal(currentTarget, database);
 
@@ -64,11 +64,15 @@ function showTasks(arr) {
         for (let task of arr) {
             let li = document.createElement('li');
             li.classList.add('todo__body-item');
-            li.textContent = task.name; 
+
+            let p = document.createElement('p');
+            p.classList.add('todo__body-text');
+            p.textContent = task.name;
 
             let i = document.createElement('i');
             i.classList.add('todo-delete', 'fa-solid', 'fa-trash-can');
 
+            li.appendChild(p);
             li.appendChild(i);
             taskList.appendChild(li); 
         }
@@ -100,11 +104,15 @@ function createNewTask(arr) {
     
         let li = document.createElement('li');
         li.classList.add('todo__body-item');
-        li.textContent = taskName.value; 
+
+        let p = document.createElement('p');
+        p.classList.add('todo__body-text');
+        p.textContent = taskName.value;
     
         let i = document.createElement('i');
         i.classList.add('todo-delete', 'fa-solid', 'fa-trash-can');
     
+        li.appendChild(p);
         li.appendChild(i);
         todoList.appendChild(li);
     
